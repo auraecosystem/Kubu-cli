@@ -1,0 +1,19 @@
+from google import genai
+
+client = genai.Client()
+ 
+# Build with Flash
+interaction = client.interactions.create(
+    model="gemini-3.6-flash",
+    input="Do something cool.",
+)
+
+print(interaction.output_text)
+
+# Build with Flash-Lite
+interaction = client.interactions.create(
+    model="gemini-3.5-flash-lite",
+    input="Do something cool with these 50 items.",
+)
+
+print(interaction.output_text)
